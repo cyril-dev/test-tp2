@@ -40,9 +40,9 @@ UserRepository.prototype.create = function (user) {
  */
 UserRepository.prototype.findOneById = function (id) {
 
-  this.db
+  return this.db
       .get('users')
-      .find(id : id)
+      .find({id : id})
       .value()
 
 
