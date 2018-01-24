@@ -40,6 +40,12 @@ UserRepository.prototype.create = function (user) {
  */
 UserRepository.prototype.findOneById = function (id) {
 
+  this.db
+      .get('users')
+      .find(id : id)
+      .value()
+
+
 };
 
 /**
@@ -60,5 +66,3 @@ UserRepository.prototype.delete = function (id) {
 
 
 module.exports = UserRepository;
-
-
