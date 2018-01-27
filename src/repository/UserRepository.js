@@ -66,7 +66,9 @@ UserRepository.prototype.update = function (user) {
  * @param {number} id
  */
 UserRepository.prototype.delete = function (id) {
-
+  this.db.get('users')
+          .remove({ id: id })
+          .write();
 };
 
 

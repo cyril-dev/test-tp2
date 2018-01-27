@@ -56,11 +56,14 @@ app
 
     //suppression d'un utilisateur
     .delete(function (req, res) {
-        /**
-         * Implémenter le controlleur
-         */
+      var id = req.params.id;
 
-        res.send('Not implemented');
+      var repo = new UserRepository(db);
+      repo.delete(id);
+
+      res.send('supprimé!!!');
+
+      //  res.send('Not implemented');
     });
 
 
