@@ -53,7 +53,12 @@ UserRepository.prototype.findOneById = function (id) {
  * @param {User} user
  */
 UserRepository.prototype.update = function (user) {
-
+  usr = this.db.get('users')
+          .find({ id: id })
+  usr.firstname = user.firstname;
+  usr.lastname = user.lastname;
+  usr.birthday = user.birthday;
+  usr.write();
 };
 
 /**
